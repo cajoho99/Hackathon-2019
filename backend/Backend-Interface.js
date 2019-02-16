@@ -22,7 +22,7 @@ function ajaxFunction(destID, targetPHP, query) {
   // sent from the server and will update
   // div section in the same page.
 
-  ajaxRequest.onreadystatechange = function() {
+  ajaxRequest.onreadystatechange = function () {
     if (ajaxRequest.readyState == 4) {
       var ajaxDisplay = document.getElementById(destID);
       ajaxDisplay.innerHTML = ajaxRequest.responseText;
