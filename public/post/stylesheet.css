@@ -84,7 +84,6 @@ a {
   margin-bottom: 30;
 }
 
-
 #addComment {
   width: 80%;
   margin: 30 0 0 10;
@@ -92,7 +91,24 @@ a {
 
 }
 
-#addCommentTextField {
+#addCommentTextArea {
   width: 60%;
   max-width: 500px;
+  float: left;
+  clear: both;
+}
+
+#postButton {
+  float: left;
+  clear: both;
+}
+
+#commentsArea {
+  border-style: solid;
+  border-color: #E0E0E0;
+  border-width: 2 0 0 0;
+  padding-top: 20;
+  margin: 80 0 0 10;
+  width: 100%;
+  clear: both;
 }
