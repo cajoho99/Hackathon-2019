@@ -18,7 +18,6 @@ $(document).ready(function () {
 
         for (var i = 0; i < x; i++) {
             var content = getCourseAt(i, content => {
-                alert(content);
                 $("#courseslist").append(
                     "<div class=\"coursebutton\"> <p class=\"coursetext\">" + content + "</p></div>"
                 )
