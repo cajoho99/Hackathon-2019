@@ -1,0 +1,98 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+}
+
+a {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+#discussion {
+  border-radius: 4px;
+  box-shadow: 3px 3px 2px #888888;
+  width: 1000;
+  background-color: #FCFCFC;
+  border-style: solid;
+  border-color: #AAAAAA;
+  border-width: 1px;
+  padding: 5 20 10 10;
+  margin: 10 0 10 0;
+}
+
+#right {
+  float: left;
+  border-style: solid;
+  border-color: #E0E0E0;
+  border-width: 0 0 0 2;
+  box-sizing: border-box;
+  width: 95%;
+  min-height: 50;
+}
+
+.right {
+  margin-left: 5;
+}
+
+#left {
+  float: left;
+  width: 5%;
+  max-width: 24;
+}
+
+.text {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.user_name {
+  font-size: 12;
+  color: #666666;
+}
+
+.content {
+  margin-left: 5;
+  font-size: 14;
+  color: #333333;
+}
+
+.voteButton {
+  margin: 0 0 5 0;
+  padding-right: 5;
+  height: 16;
+  width: 16;
+  margin-left: auto;
+  margin-right: auto;
+  clear: both;
+  float: right;
+}
+
+#upVote {
+
+}
+
+#downVote {
+  transform: scaleY(-1);
+}
+
+#post {
+  margin-bottom: 30;
+}
+
+
+#addComment {
+  width: 80%;
+  margin: 30 0 0 10;
+  padding-bottom: 30;
+
+}
+
+#addCommentTextField {
+  width: 60%;
+  max-width: 500px;
+}
