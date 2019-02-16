@@ -2,30 +2,31 @@
 
 class DB
 {
-    private $instance = null;
+    private static $instance = null;
 
-    private $servername = "localhost";
-    private $username = "root";
-    private $password = "";
+    private static $servername = "localhost";
+    private static $username = "root";
+    private static $password = "";
+    private static $dbo;
 
     private function __construct()
     {
-
+        try {
+            $dbo = new PDO("mysql:host=" . DB::$servername . ";dbname=mydb", DB::$username, DB::$password);
+            $dbo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+            echo "Connection successful";
+        } catch (PDOException $e) {
+            echo "Conncetion failed: " . $e->getMessage();
+        }
+        self::$dbo = $dbo;
     }
 
-    public function getInstance()
+    public static function getInstance()
     {
         if (self::$instance == null) {
-            try {
-                $dbo = new PDO("mysql:host=$servername;dbname=mydb", $username, $password);
-                $dbo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-                echo "Connection successful";
-            } catch (PDOException $e) {
-                echo "Conncetion failed: " . $e->getMessage();
-            }
-            self::$instace = $dbo;
+            self::$instance = new DB();
         }
-        return self::$instance;
+        return self::$dbo;
     }
 }
 ?>

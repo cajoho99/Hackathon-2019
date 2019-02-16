@@ -1,42 +1,42 @@
 <?php
 include 'connectDB.php';
 
-function addToDB($dbo, $code, $name, $description)
+function addToDB($code, $name, $description)
 {
-    $stmt = $dbo->prepare("INSERT INTO Courses(code, name, description) VALUES (:code, :name, :description)");
+    $stmt = DB::getInstance()->prepare("INSERT INTO Courses(code, name, description) VALUES (:code, :name, :description)");
     $stmt->bindParam(":code", $code);
     $stmt->bindParam(":name", $name);
     $stmt->bindParam(":description", $description);
     $stmt->execute();
 }
 
-function getCourseCodes($dbo)
+function getCourseCodes()
 {
-    $stmt = $dbo->prepare("SELECT code FROM Courses");
+    $stmt = DB::getInstance()->prepare("SELECT code FROM Courses");
     $stmt->execute();
     $res = $stmt->fetch();
     return $res;
 }
 
-function getCourseName($dbo, $code)
+function getCourseName($code)
 {
-    $stmt = $dbo->prepare("SELECT name FROM Courses WHERE code = :code");
+    $stmt = DB::getInstance()->prepare("SELECT name FROM Courses WHERE code = :code");
     $stmt->bindParam(":code", $code);
     $stmt->execute();
     $res = $stmt->fetch();
     return $res;
 }
 
-function getCourseDescription($dbo, $code)
+function getCourseDescription($code)
 {
-    $stmt = $dbo->prepare("SELECT name FROM description WHERE code = :code");
+    $stmt = DB::getInstance()->prepare("SELECT name FROM description WHERE code = :code");
     $stmt->bindParam(":code", $code);
     $stmt->execute();
     $res = $stmt->fetch();
     return $res;
 }
 
-
+addToDB("DAT017", "MOP", "LDR RO, =FUCKLIFE");
 
 
 ?>
