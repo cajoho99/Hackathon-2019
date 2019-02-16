@@ -16,11 +16,11 @@ a {
 #comment {
   border-radius: 2px;
   box-shadow: 2px 2px 2px #888888;
-  width: 1000;
+  width: 500;
   max-width: 600;
   background-color: #FCFCFC;
   border-style: solid;
-  border-color: #AAAAAA;
+  border-color: #DDDDDD;
   border-width: 1px;
   padding: 5 20 10 10;
   margin: 10 0 10 0;
@@ -71,4 +71,8 @@ a {
   margin-right: auto;
   clear: both;
   float: right;
+}
+.voteButton:active {
+	position:relative;
+	top:1px;
 }
