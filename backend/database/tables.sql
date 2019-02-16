@@ -15,6 +15,7 @@ CREATE TABLE Posts(
     course VARCHAR(64),
     title TEXT NOT NULL,
     score INTEGER NOT NULL,
+    content TEXT,
     FOREIGN KEY (course) REFERENCES Courses(name),
     PRIMARY KEY (id, course)
 );
@@ -25,6 +26,7 @@ CREATE TABLE Comments(
     postID BIGINT UNSIGNED,
     score INT,
     postCourse VARCHAR(32),
+    content TEXT,
     PRIMARY KEY (id, user),
     FOREIGN KEY (user) REFERENCES Users(name),
     FOREIGN KEY (postID, postCourse) REFERENCES Posts(id, course)
